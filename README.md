@@ -114,7 +114,7 @@ PR’s are very welcome!
 
 ## License
 
-This project licensed under MIT.
+This project is licensed under MIT.
 
 [vigo]:  http://ugur.ozyilmazel.com "Official Homepage"
 [ln-01]: https://github.com/vigo/textmate1-github-gfm-preview
