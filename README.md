@@ -16,8 +16,18 @@ cd textmate2-gfm-preview.tmbundle/
 bundle install --path=gems
 ```
 
-Now you can hit `⌃ +  ⌥ +  ⌘ + p` or `kntrl + alt + cmd + p`
+You can define `TM_GFM_ZOOM_FACTOR` variable from *TextMate > Preferences > Variables* 
+for text-zoom. Example Settings:
 
+![Example Settings](Support/screenshots/gfm-zoom-factor.png)
+
+Sample screens with/out zoom factor:
+
+![26px zoom](Support/screenshots/gfm-zoomed-26px.png)
+
+![Without zoom](Support/screenshots/gfm-without-zoom.png)
+
+Now you can hit `⌃ +  ⌥ +  ⌘ + p` or `kntrl + alt + cmd + p`
 
 ## Features
 
@@ -86,6 +96,12 @@ Output:
 ***
 
 ## Change Log
+
+**2016-04-25**
+
+* Added: `TM_GFM_ZOOM_FACTOR` for zoom options
+* Auto-save! If you open an existing file and hit preview, you don’t need
+to save!
 
 **2016-03-20**
 
