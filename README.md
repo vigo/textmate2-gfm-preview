@@ -31,6 +31,11 @@ Now you can hit `⌃ +  ⌥ +  ⌘ + p` or `kntrl + alt + cmd + p`
 
 ## Features
 
+### Mathjax Support
+
+Add `TM_MARKDOWN_MATHJAX` variable and set it to `1` for mathjax support.
+(*TextMate > Preferences > Variables*)
+
 ### Strikethrough
 
 You can ~~strikethrough~~ words.
@@ -137,6 +142,7 @@ Output:
 
 **2016-09-14**
 
+* Added: Mathjax support.
 * Added more `redcarpet` features: Strikethrough, Superscript, Underline, Highlight, 
 Quote, Footnotes. Please preview this readme file via bundle. GitHub doesn’t support
 some of the features (*highlight, superscript, underline, footnote etc...*)

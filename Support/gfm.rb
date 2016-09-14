@@ -68,6 +68,27 @@ html_header = [
 
 html_footer = [
   '</div>', 
+]
+
+if ENV["TM_MARKDOWN_MATHJAX"].to_i > 0
+  html_footer += [
+    "<script type=\"text/x-mathjax-config\">
+      MathJax.Hub.Config({
+        extensions: [\"tex2jax.js\"],
+        jax: [\"input/TeX\", \"output/HTML-CSS\"],
+        tex2jax: {
+          inlineMath: [ [\"$\",\"$\"], [\"\\\\(\",\"\\\\)\"] ],
+          displayMath: [ [\"$$\",\"$$\"], [\"\\\\[\",\"\\\\]\"] ],
+          processEscapes: false
+        },
+        \"HTML-CSS\": { availableFonts: [\"TeX\"] }
+      });
+    </script>
+    <script type=\"text/javascript\" src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>"
+  ]
+end
+
+html_footer += [
   "\n<script>window.location.hash = \"scroll_here\";</script>",
   '</body>', '</html>',
 ]
