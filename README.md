@@ -31,6 +31,44 @@ Now you can hit `⌃ +  ⌥ +  ⌘ + p` or `kntrl + alt + cmd + p`
 
 ## Features
 
+### Strikethrough
+
+You can ~~strikethrough~~ words.
+    
+    You can ~~strikethrough~~ words.
+
+### Superscript
+
+This is your 2^(nd) attempt.  
+
+    This is your 2^(nd) attempt.
+
+### Underline
+
+This is _underlined_ but this is still *italic*
+
+    This is _underlined_ but this is still *italic*
+
+### Highlight
+
+This is ==highlighted== text.
+
+    This is ==highlighted==
+
+### Quote
+
+This is a "quote"
+
+    This is a "quote"
+
+### Footnotes
+
+Click to jump footnote.[^1]
+[^1]: This is a footnote.
+
+    Click to jump footnote.[^1]
+    [^1]: This is a footnote.
+
 ### Fenced Code Blocks
 
     ```ruby

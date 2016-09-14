@@ -18,7 +18,13 @@ def markdown(text)
     :space_after_headers => true,
     :fenced_code_blocks  => true,
     :tables              => true,
-    :strikethrough       => true,
+    :strikethrough       => true, # this is ~~good~~ bad
+    :superscript         => true, # this is the 2^(nd) time
+    :underline           => true, # This is _underlined_ but this is still *italic*
+    :highlight           => true, # This is ==highlighted==
+    :quote               => true, # This is a "quote"
+    :footnotes           => true, # This is a sentence.[^1]
+                                  # [^1]: This is a footnote.
     :smart               => true,
     :safelink            => true,
     :no_intraemphasis    => true,
