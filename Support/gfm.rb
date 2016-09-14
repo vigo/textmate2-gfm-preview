@@ -95,6 +95,15 @@ html_footer += [
 
 rendered_markdown = markdown($file)
 
+lines = rendered_markdown.split("\n")
+n = [ENV["TM_LINE_NUMBER"].to_i, lines.length].min - 7
+while n > 0 && !lines[n].match(/<(h\d|p|ul|li|blockquote|pre|div|img|code|table|tr)>/i)
+  n -= 1
+end
+if n > 0 && m = lines[n].match(/<(h\d|p|ul|li|blockquote|pre|div|img|code|table|tr)>(.*)$/i)
+  lines[n] = "<#{m[1]} id=\"scroll_here\">#{m[2]}"
+end
+
 puts html_header.join("")
-puts rendered_markdown
+puts lines.join("\n")
 puts html_footer.join("")
