@@ -135,6 +135,13 @@ Output:
 
 ## Change Log
 
+**2016-09-14**
+
+* Added more `redcarpet` features: Strikethrough, Superscript, Underline, Highlight, 
+Quote, Footnotes. Please preview this readme file via bundle. GitHub doesn’t support
+some of the features (*highlight, superscript, underline, footnote etc...*)
+
+
 **2016-04-25**
 
 * Added: `TM_GFM_ZOOM_FACTOR` for zoom options
