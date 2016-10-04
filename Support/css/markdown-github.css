@@ -77,6 +77,7 @@ body {
 .github-gfm table {
   border-collapse: collapse;
   border-spacing: 0;
+  font-size: 100%;
 }
 
 .github-gfm td,

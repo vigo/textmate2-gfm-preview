@@ -38,5 +38,9 @@ fi
 	<string>75B3AC6F-8A8E-46EB-87A1-C72E523F0075</string>
 	<key>version</key>
 	<integer>2</integer>
+	<key>autoRefresh</key>
+    <array>
+        <string>DocumentSaved</string>   <!-- Run if any document is saved     -->
+    </array>
 </dict>
 </plist>

@@ -140,6 +140,12 @@ Output:
 
 ## Change Log
 
+**2016-10-04**
+
+* Fix zoom factor for TABLEs
+* Automatic refresh for Preview (*comes with TextMate version 2.0-beta.12.21*) 
+when you save file.
+
 **2016-09-14**
 
 * Added: Mathjax support.
