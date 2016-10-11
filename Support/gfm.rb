@@ -101,7 +101,8 @@ while n > 0 && !lines[n].match(/<(h\d|p|ul|li|blockquote|pre|div|img|code|table|
   n -= 1
 end
 if n > 0 && m = lines[n].match(/<(h\d|p|ul|li|blockquote|pre|div|img|code|table|tr)>(.*)$/i)
-  lines[n] = "<#{m[1]} id=\"scroll_here\">#{m[2]}"
+  # lines[n] = "<#{m[1]} id=\"scroll_here\">#{m[2]}"
+  lines[n] = "<a name=\"scroll_here\"></a>#{lines[n]}"
 end
 
 puts html_header.join("")

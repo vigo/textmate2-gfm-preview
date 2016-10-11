@@ -17,15 +17,6 @@ body {
   word-wrap: break-word;
 }
 
-.github-gfm a {
-  background-color: transparent;
-}
-
-.github-gfm a:active,
-.github-gfm a:hover {
-  outline: 0;
-}
-
 .github-gfm strong {
   font-weight: bold;
 }
@@ -96,11 +87,13 @@ body {
 .github-gfm a {
   color: #4078c0;
   text-decoration: none;
+  background-color: transparent;
 }
 
 .github-gfm a:hover,
 .github-gfm a:active {
   text-decoration: underline;
+  outline: 0;
 }
 
 .github-gfm hr {
