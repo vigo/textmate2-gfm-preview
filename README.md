@@ -140,6 +140,10 @@ Output:
 
 ## Change Log
 
+**2017-01-01**
+
+* Support for relative image src: `![alt](picture.png "title")` looks for `picture.png` in current folder.
+
 **2016-10-04**
 
 * Fix zoom factor for TABLEs

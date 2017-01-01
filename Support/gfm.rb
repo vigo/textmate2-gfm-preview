@@ -40,11 +40,13 @@ css_file_syntax = "#{ENV['TM_BUNDLE_SUPPORT']}/css/syntax-hightlight-github.css"
 $file_preview_title = "Preview"
 $file = STDIN.read
 
+$current_folder_as_image_path = ""
 if ENV['TM_FILEPATH']
   $file_preview_title = "#{$file_preview_title}: #{File.basename(ENV['TM_FILEPATH'])}"
   save_file = File.new(ENV['TM_FILEPATH'], "w")
   save_file.write($file)
   save_file.close
+  $current_folder_as_image_path = '<base href="file://' + File.dirname(ENV['TM_FILEPATH']) + '/">'
 end
 
 $zoom_factor = ""
@@ -63,6 +65,7 @@ html_header = [
   "<link rel=\"stylesheet\" href=\"file://#{css_file_github}\">",
   "<link rel=\"stylesheet\" href=\"file://#{css_file_syntax}\">",
   $zoom_factor,
+  $current_folder_as_image_path,
   '</head>', '<body>', '<div class="github-gfm">',
 ]
 
