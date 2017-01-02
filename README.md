@@ -16,14 +16,22 @@ cd textmate2-gfm-preview.tmbundle/
 bundle install --path=gems
 ```
 
-You can define `TM_GFM_ZOOM_FACTOR` variable from *TextMate > Preferences > Variables* 
-for text-zoom. Example Settings:
+You can define;
 
-![Example Settings](Support/screenshots/gfm-zoom-factor.png)
+- `TM_GFM_ZOOM_FACTOR`: For zooming text.
+- `TM_MARKDOWN_MATHJAX`: For Mathjax support.
+- `TM_GFM_FONT`: For custom font which is installed to your `~/Fonts`
 
-Sample screens with/out zoom factor:
+variables from *TextMate > Preferences > Variables* for customizing extra
+features. Example Settings:
+
+![Example Settings](Support/screenshots/gfm-example-config.png)
+
+With **26px** zoom:
 
 ![26px zoom](Support/screenshots/gfm-zoomed-26px.png)
+
+Without zoom:
 
 ![Without zoom](Support/screenshots/gfm-without-zoom.png)
 
@@ -139,6 +147,11 @@ Output:
 ***
 
 ## Change Log
+
+**2017-01-02**
+
+* Fix: Broken footnotes due to base href.
+* New feature: Custom font-family via `TM_GFM_FONT` env-var.
 
 **2017-01-01**
 

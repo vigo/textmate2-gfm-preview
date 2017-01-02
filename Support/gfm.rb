@@ -40,32 +40,32 @@ css_file_syntax = "#{ENV['TM_BUNDLE_SUPPORT']}/css/syntax-hightlight-github.css"
 $file_preview_title = "Preview"
 $file = STDIN.read
 
+$extra_css_information = [
+  '<style type="text/css">',
+    '.github-gfm {',
+    '}',
+  '</style>',
+]
+
 $current_folder_as_image_path = ""
 if ENV['TM_FILEPATH']
   $file_preview_title = "#{$file_preview_title}: #{File.basename(ENV['TM_FILEPATH'])}"
   save_file = File.new(ENV['TM_FILEPATH'], "w")
   save_file.write($file)
   save_file.close
-  $current_folder_as_image_path = '<base href="file://' + File.dirname(ENV['TM_FILEPATH']) + '/">'
+  $current_folder_as_image_path = '<script>let localFilePath = "file://' + File.dirname(ENV['TM_FILEPATH']) + '/";</script>'
 end
 
-$zoom_factor = ""
-if ENV['TM_GFM_ZOOM_FACTOR']
-  $zoom_factor = [
-    '<style type="text/css">',
-      '.github-gfm {',
-        'font-size:', ENV['TM_GFM_ZOOM_FACTOR'],
-      '}',
-    '</style>'
-  ].join("")
-end
+$extra_css_information.insert(2, 'font-size:', "#{ENV['TM_GFM_ZOOM_FACTOR']};") if ENV['TM_GFM_ZOOM_FACTOR']
+$extra_css_information.insert(2, 'font-family:', "#{ENV['TM_GFM_FONT']};") if ENV['TM_GFM_FONT']
+$extra_css_information.join 
 
 html_header = [
   '<html>', '<head>', '<title>', $file_preview_title, '</title>',
-  "<link rel=\"stylesheet\" href=\"file://#{css_file_github}\">",
-  "<link rel=\"stylesheet\" href=\"file://#{css_file_syntax}\">",
-  $zoom_factor,
+  "<link rel=\"stylesheet\" href=\"file://#{css_file_github}?#{Time.now.strftime('%s')}\">",
+  "<link rel=\"stylesheet\" href=\"file://#{css_file_syntax}?#{Time.now.strftime('%s')}\">",
   $current_folder_as_image_path,
+  $extra_css_information.join,
   '</head>', '<body>', '<div class="github-gfm">',
 ]
 
@@ -88,6 +88,21 @@ if ENV["TM_MARKDOWN_MATHJAX"].to_i > 0
       });
     </script>
     <script type=\"text/javascript\" src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>"
+  ]
+end
+
+if $current_folder_as_image_path
+  html_footer += [
+    "<script>
+        let textMateHandleString = 'x-txmt-filehandle://job/Preview/';
+        document.addEventListener('DOMContentLoaded', function(event){
+          Array.prototype.forEach.call(document.images, function(image){
+              if(image.src.indexOf(textMateHandleString) > -1){
+                  image.src = localFilePath + image.src.replace(textMateHandleString, '');
+              }
+          });
+        });
+    </script>"
   ]
 end
 
