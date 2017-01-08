@@ -148,6 +148,11 @@ Output:
 
 ## Change Log
 
+**2017-01-08**
+
+* Fix: live preview.
+
+
 **2017-01-02**
 
 * Fix: Broken footnotes due to base href.

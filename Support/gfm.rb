@@ -50,9 +50,9 @@ $extra_css_information = [
 $current_folder_as_image_path = ""
 if ENV['TM_FILEPATH']
   $file_preview_title = "#{$file_preview_title}: #{File.basename(ENV['TM_FILEPATH'])}"
-  save_file = File.new(ENV['TM_FILEPATH'], "w")
-  save_file.write($file)
-  save_file.close
+  # save_file = File.new(ENV['TM_FILEPATH'], "w")
+  # save_file.write($file)
+  # save_file.close
   $current_folder_as_image_path = '<script>let localFilePath = "file://' + File.dirname(ENV['TM_FILEPATH']) + '/";</script>'
 end
 

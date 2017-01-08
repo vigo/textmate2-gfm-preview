@@ -40,7 +40,7 @@ fi
 	<integer>2</integer>
 	<key>autoRefresh</key>
     <array>
-        <string>DocumentSaved</string>   <!-- Run if any document is saved     -->
+        <string>DocumentChanged</string>
     </array>
 </dict>
 </plist>
