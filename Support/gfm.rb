@@ -95,10 +95,14 @@ if $current_folder_as_image_path
   html_footer += [
     "<script>
         let textMateHandleString = 'x-txmt-filehandle://job/Preview/';
+        let fileHandleString = 'file:///Applications/TextMate.app/Contents/Resources/';
         document.addEventListener('DOMContentLoaded', function(event){
           Array.prototype.forEach.call(document.images, function(image){
               if(image.src.indexOf(textMateHandleString) > -1){
                   image.src = localFilePath + image.src.replace(textMateHandleString, '');
+              }
+              if(image.src.indexOf(fileHandleString) > -1){
+                  image.src = localFilePath + image.src.replace(fileHandleString, '');
               }
           });
         });
