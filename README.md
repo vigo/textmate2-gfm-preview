@@ -5,15 +5,16 @@ If you are TextMate1 user, you can have [TextMate1 edition of the bundle][ln-01]
 ## Requirements
 
 I’m assuming that you have `ruby` and `bundler` gem installed. Ruby version 
-must be ` >= 2.0`.
+must be ` >= 2.0`. If you use **rbenv**, `.ruby-version` added and uses
+version `2.3.3`
 
 ## Install
 
 ```bash
-cd "~/Library/Application Support/Avian/Bundles/"
+cd "~/Library/Application Support/TextMate/Bundles/"
 git clone https://github.com/vigo/textmate2-gfm-preview.git textmate2-gfm-preview.tmbundle
 cd textmate2-gfm-preview.tmbundle/
-bundle install --path=gems
+bundle install --path vendor/bundle
 ```
 
 You can define;
