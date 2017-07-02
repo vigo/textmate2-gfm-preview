@@ -1,18 +1,15 @@
 require 'rubygems'
 require 'bundler/setup'
-Bundler.require
 
-class HTMLwithPygments < Redcarpet::Render::HTML
-  def block_code(code, language)
-    language ||= 'text'
-    Pygments.highlight(code, :lexer => language)
-  rescue
-    Pygments.highlight(code, :lexer => 'text')
-  end
+Bundler.require
+require 'rouge/plugins/redcarpet'
+
+class HTMLwithRouge < Redcarpet::Render::HTML
+  include Rouge::Plugins::Redcarpet
 end
 
 def markdown(text)
-  renderer = HTMLwithPygments.new
+  renderer = HTMLwithRouge.new
   options = {
     :autolink            => true,
     :space_after_headers => true,
@@ -33,9 +30,8 @@ def markdown(text)
   Redcarpet::Markdown.new(renderer, options).render(text)
 end
 
-css_file_github = "#{ENV['TM_BUNDLE_SUPPORT']}/css/markdown-github.css"
-css_file_syntax = "#{ENV['TM_BUNDLE_SUPPORT']}/css/syntax-hightlight-github.css"
-
+css_file_github = "#{ENV['TM_BUNDLE_SUPPORT']}/css/github-markdown.css"
+css_file_syntax = "#{ENV['TM_BUNDLE_SUPPORT']}/css/syntax-hightlight.css"
 
 $file_preview_title = "Preview"
 $file = STDIN.read
@@ -50,9 +46,6 @@ $extra_css_information = [
 $current_folder_as_image_path = ""
 if ENV['TM_FILEPATH']
   $file_preview_title = "#{$file_preview_title}: #{File.basename(ENV['TM_FILEPATH'])}"
-  # save_file = File.new(ENV['TM_FILEPATH'], "w")
-  # save_file.write($file)
-  # save_file.close
   $current_folder_as_image_path = '<script>let localFilePath = "file://' + File.dirname(ENV['TM_FILEPATH']) + '/";</script>'
 end
 
@@ -61,12 +54,16 @@ $extra_css_information.insert(2, 'font-family:', "#{ENV['TM_GFM_FONT']};") if EN
 $extra_css_information.join 
 
 html_header = [
-  '<html>', '<head>', '<title>', $file_preview_title, '</title>',
-  "<link rel=\"stylesheet\" href=\"file://#{css_file_github}?#{Time.now.strftime('%s')}\">",
-  "<link rel=\"stylesheet\" href=\"file://#{css_file_syntax}?#{Time.now.strftime('%s')}\">",
-  $current_folder_as_image_path,
-  $extra_css_information.join,
-  '</head>', '<body>', '<div class="github-gfm">',
+  '<html>',
+    '<head>', 
+      '<title>', $file_preview_title, '</title>',
+      "<link rel=\"stylesheet\" href=\"file://#{css_file_github}?#{Time.now.strftime('%s')}\">",
+      "<link rel=\"stylesheet\" href=\"file://#{css_file_syntax}?#{Time.now.strftime('%s')}\">",
+      $current_folder_as_image_path,
+      $extra_css_information.join,
+    '</head>',
+    '<body>',
+      '<div class="github-gfm">',
 ]
 
 html_footer = [

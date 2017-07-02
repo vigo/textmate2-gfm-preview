@@ -1,20 +1,39 @@
+![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)
+![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
+
+
 # GitHub Flavored Markdown Preview for TextMate2
 
-If you are TextMate1 user, you can have [TextMate1 edition of the bundle][ln-01] too :)
+Write and preview your Markdown files like a Boss! (*Sorry, TextMate1 is
+dead...*)
 
 ## Requirements
 
-I’m assuming that you have `ruby` and `bundler` gem installed. Ruby version 
-must be ` >= 2.0`. If you use **rbenv**, `.ruby-version` added and uses
-version `2.3.3`
+- Ruby 2.4.0
+- Please set your `TM_RUBY` environment variable in TextMate.
 
-## Install
+Example of `TM_RUBY` configuration:
 
 ```bash
-cd "~/Library/Application Support/TextMate/Bundles/"
-git clone https://github.com/vigo/textmate2-gfm-preview.git textmate2-gfm-preview.tmbundle
-cd textmate2-gfm-preview.tmbundle/
+which ruby
+# /Users/vigo/.rbenv/shims/ruby
+
+defaults write com.macromates.textmate environmentVariables -array-add '{enabled = 1; value = "/Users/vigo/.rbenv/shims/ruby"; name = "TM_RUBY"; }'
+# Restart your TextMate
+```
+
+
+## Install & Update
+
+```bash
+cd ~/Library/Application\ Support/TextMate/Bundles/
+git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
+cd GFM-Preview.tmbundle/
 bundle install --path vendor/bundle
+
+# If you want to update time-to-time
+cd ~/Library/Application\ Support/TextMate/Bundles/GFM-Preview.tmbundle
+git pull
 ```
 
 You can define;
@@ -24,7 +43,19 @@ You can define;
 - `TM_GFM_FONT`: For custom font which is installed to your `~/Fonts`
 
 variables from *TextMate > Preferences > Variables* for customizing extra
-features. Example Settings:
+features. Or do it from shell:
+
+```bash
+# assuming that, `OpenSans` font already installed on your ~/Library/Fonts
+
+defaults write com.macromates.textmate environmentVariables -array-add \
+    '{enabled = 1; value = "26px"; name = "TM_GFM_ZOOM_FACTOR"; }' \
+    '{enabled = 1; value = 1; name = "TM_MARKDOWN_MATHJAX"; }' \
+    '{enabled = 1; value = "OpenSans"; name = "TM_GFM_FONT"; }'
+```
+
+
+Example Settings:
 
 ![Example Settings](Support/screenshots/gfm-example-config.png)
 
@@ -149,10 +180,15 @@ Output:
 
 ## Change Log
 
+**2017-07-02**
+
+* Removed: Pygments
+* New syntax highlighter: `rouge`
+* Updated to Ruby 2.4.0
+
 **2017-01-08**
 
 * Fix: live preview.
-
 
 **2017-01-02**
 
