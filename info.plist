@@ -7,10 +7,35 @@
 	<key>contactName</key>
 	<string>Uğur "vigo" Özyılmazel</string>
 	<key>description</key>
-	<string>GitHub Flavored Markdown Preview</string>
+	<string>GitHub Flavored Markdown Editor and Preview by Uğur “vigo” Özyılmazel.
+
+http://ugur.ozyilmazel.com
+https://github.com/vigo
+
+@vigobronx</string>
 	<key>name</key>
 	<string>TextMate2 GFM Preview</string>
 	<key>uuid</key>
 	<string>BCFF8DAB-78F0-4825-8256-9F72A59282EA</string>
+    <key>mainMenu</key>
+    <dict>
+        <key>items</key>
+        <array>
+            <string>------------------------------------</string>
+            <string>94F04597-DF2D-4F17-BCAD-03A91D098677</string>
+            <string>262D30EE-30C9-4356-872B-92A93AE53E7A</string>
+            <string>------------------------------------</string>
+            <string>6CEE1CEC-000C-4B75-893D-63AAA36B37ED</string>
+            <string>3DA3EB72-8DFC-45B1-8180-7CED5FFD8877</string>
+            <string>6E539803-9B11-4246-8B69-A9116D104168</string>
+            <string>AF41111F-C04D-4056-9A42-97E05E9F9443</string>
+            <string>5AF80836-B593-487E-81BC-30EDF6E8522D</string>
+            <string>73F4C2C2-2946-42F2-8F28-ED42C1C13BD1</string>
+            <string>2C6A1479-834E-4DC4-B80D-F8ED9549EF63</string>
+            <string>------------------------------------</string>
+            <string>75B3AC6F-8A8E-46EB-87A1-C72E523F0075</string>
+            <string>------------------------------------</string>
+        </array>
+    </dict>
 </dict>
 </plist>

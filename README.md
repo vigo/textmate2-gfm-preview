@@ -2,7 +2,7 @@
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
 
 
-# GitHub Flavored Markdown Preview for TextMate2
+# GitHub Flavored Markdown Editor and Preview for TextMate2
 
 Write and preview your Markdown files like a Boss! (*Sorry, TextMate1 is
 dead...*)
@@ -68,6 +68,22 @@ Without zoom:
 ![Without zoom](Support/screenshots/gfm-without-zoom.png)
 
 Now you can hit `⌃ +  ⌥ +  ⌘ + p` or `kntrl + alt + cmd + p`
+
+## Editor Features
+
+With the power or Redcarpet and Rouge gems, we have some special features in
+markdown operation!
+
+Shortcuts | Description
+:---------|:---------
+`c` + <kbd>⇥</kbd> | Insert code block. There are lots of languages supported. Thanks to rouge gem. [List of languages are here][rouge-list].
+<kbd>⌃</kbd> + <kbd>C</kbd> | Convert selection to inline code.
+<kbd>⌃</kbd> + <kbd>H</kbd> | Convert selection to highlighted text.
+<kbd>⌃</kbd> + <kbd>S</kbd> | Convert selection to strikethrough text.
+<kbd>⌘</kbd> + <kbd>U</kbd> | Convert selection to underlined text.
+`table` + <kbd>⇥</kbd> | Insert markdown table.
+`img` + <kbd>⇥</kbd> | Insert markdown image.
+
 
 ## Features
 
@@ -186,6 +202,7 @@ Output:
 * New syntax highlighter: `rouge`
 * Updated to Ruby 2.4.0
 * Added: Front-Matter filter for Preview. Thanks to [noniq][noniq] for [Markdown-Front-Matter][markdown-fm-bundle]
+* Added: Lots of Markdown Snippets!
 
 **2017-01-08**
 
@@ -253,3 +270,4 @@ This project is licensed under MIT.
 [ln-01]: https://github.com/vigo/textmate1-github-gfm-preview
 [noniq]: https://github.com/noniq
 [markdown-fm-bundle]: https://github.com/noniq/Markdown-Front-Matter.tmbundle/blob/master/Support/strip_front_matter
+[rouge-list]: https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers

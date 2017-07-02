@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\`\`\`${1|abap,actionscript,apache,apiblueprint,applescript,awk,biml,bsl,c,ceylon,cfscript,clojure,cmake,coffeescript,common_lisp,conf,console,coq,cpp,csharp,css,d,dart,diff,digdag,django,docker,dot,eiffel,elixir,erb,erlang,factor,fortran,fsharp,gherkin,glsl,go,gradle,graphql,groovy,haml,handlebars,haskell,html,http,hylang,idlang,igorpro,ini,io,irb,irb_output,java,javascript,jinja,json,json-doc,jsonnet,jsx,julia,kotlin,lasso,liquid,literate_coffeescript,literate_haskell,llvm,lua,make,markdown,matlab,moonscript,mosel,mxml,nasm,nginx,nim,objective_c,ocaml,pascal,perl,php,plaintext,plist,pony,powershell,praat,prolog,prometheus,properties,protobuf,puppet,python,q,qml,r,racket,ruby,rust,sass,scala,scheme,scss,sed,shell,sieve,slim,smalltalk,smarty,sml,sql,swift,tap,tcl,tex,toml,tsx,tulip,turtle,twig,typescript,vala,vb,verilog,vhdl,viml,vue,wollok,xml,yaml|}
+$0
+\`\`\`</string>
+	<key>name</key>
+	<string>Code Block</string>
+	<key>scope</key>
+	<string>text.html.markdown</string>
+	<key>tabTrigger</key>
+	<string>c</string>
+	<key>uuid</key>
+	<string>6CEE1CEC-000C-4B75-893D-63AAA36B37ED</string>
+</dict>
+</plist>
