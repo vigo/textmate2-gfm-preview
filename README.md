@@ -185,6 +185,7 @@ Output:
 * Removed: Pygments
 * New syntax highlighter: `rouge`
 * Updated to Ruby 2.4.0
+* Added: Front-Matter filter for Preview. Thanks to [noniq][noniq] for [Markdown-Front-Matter][markdown-fm-bundle]
 
 **2017-01-08**
 
@@ -250,3 +251,5 @@ This project is licensed under MIT.
 
 [vigo]:  http://ugur.ozyilmazel.com "Official Homepage"
 [ln-01]: https://github.com/vigo/textmate1-github-gfm-preview
+[noniq]: https://github.com/noniq
+[markdown-fm-bundle]: https://github.com/noniq/Markdown-Front-Matter.tmbundle/blob/master/Support/strip_front_matter

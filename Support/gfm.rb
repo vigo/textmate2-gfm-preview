@@ -112,7 +112,14 @@ html_footer += [
   '</body>', '</html>',
 ]
 
-rendered_markdown = markdown($file)
+DELIMITER = /^---\s*$/
+
+file_lines = $file.split("\n")
+if file_lines[0] =~ DELIMITER && (end_of_frontmatter = file_lines[1..-1].find_index{ |l| l =~ DELIMITER }) != nil
+  file_lines.slice!(0, end_of_frontmatter + 2)
+end
+
+rendered_markdown = markdown(file_lines.join("\n"))
 
 lines = rendered_markdown.split("\n")
 n = [ENV["TM_LINE_NUMBER"].to_i, lines.length].min - 7
