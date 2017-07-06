@@ -49,8 +49,8 @@ if ENV['TM_FILEPATH']
   $current_folder_as_image_path = '<script>let localFilePath = "file://' + File.dirname(ENV['TM_FILEPATH']) + '/";</script>'
 end
 
-$extra_css_information.insert(2, 'font-size:', "#{ENV['TM_GFM_ZOOM_FACTOR']};") if ENV['TM_GFM_ZOOM_FACTOR']
-$extra_css_information.insert(2, 'font-family:', "#{ENV['TM_GFM_FONT']};") if ENV['TM_GFM_FONT']
+$extra_css_information.insert(2, 'zoom: ', "#{ENV['TM_GFM_ZOOM_FACTOR']};") if ENV['TM_GFM_ZOOM_FACTOR']
+$extra_css_information.insert(2, 'font-family: ', "#{ENV['TM_GFM_FONT']};") if ENV['TM_GFM_FONT']
 $extra_css_information.join 
 
 html_header = [

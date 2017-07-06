@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)
+![Version](https://img.shields.io/badge/version-2.0.1-orange.svg)
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
 
 
@@ -49,25 +49,28 @@ features. Or do it from shell:
 # assuming that, `OpenSans` font already installed on your ~/Library/Fonts
 
 defaults write com.macromates.textmate environmentVariables -array-add \
-    '{enabled = 1; value = "26px"; name = "TM_GFM_ZOOM_FACTOR"; }' \
+    '{enabled = 1; value = "100%"; name = "TM_GFM_ZOOM_FACTOR"; }' \
     '{enabled = 1; value = 1; name = "TM_MARKDOWN_MATHJAX"; }' \
     '{enabled = 1; value = "OpenSans"; name = "TM_GFM_FONT"; }'
 ```
 
 
-Example Settings:
+### Example Settings
 
-![Example Settings](Support/screenshots/gfm-example-config.png)
+![Example Settings](Support/screenshots/gfm-example-config.png?3)
 
-With **26px** zoom:
+### Zooming
 
-![26px zoom](Support/screenshots/gfm-zoomed-26px.png)
+Without zoom (default/standard)
 
-Without zoom:
+![Without zoom](Support/screenshots/gfm-without-zoom.png?5)
 
-![Without zoom](Support/screenshots/gfm-without-zoom.png)
+With **150%** zoom:
 
-Now you can hit `⌃ +  ⌥ +  ⌘ + p` or `kntrl + alt + cmd + p`
+![150% zoom](Support/screenshots/gfm-zoomed.png?4)
+
+You name it! Make it `300%` if you like to! Now you can hit `⌃ + ⌥ + ⌘ + p` or
+`kntrl + alt + cmd + p`
 
 ## Editor Features
 
