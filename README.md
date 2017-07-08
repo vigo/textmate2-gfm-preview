@@ -199,6 +199,11 @@ Output:
 
 ## Change Log
 
+**2017-07-08**
+
+* Ruby lib `gfm.rb` re-written from scratch!
+* Fixed: Live Preview!
+
 **2017-07-02**
 
 * Removed: Pygments
