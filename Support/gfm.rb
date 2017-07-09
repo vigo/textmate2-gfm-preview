@@ -136,9 +136,21 @@ else
   current_line = lines[selection_line_index]
 end
 
-if current_line
-  lines.each_with_index do |raw_line, index|
-    lines[index] = "#{raw_line} REPLACEMEMEFORANCHOROPZ" if current_line.chomp == raw_line.chomp
+tm_line_number = ENV['TM_LINE_NUMBER'].to_i
+
+ANCHOR_IDENTIFIER = 'REPLACEMEMEFORANCHOROPZ'
+
+if tm_line_number > lines.length
+  (lines.length+1..tm_line_number-1).each do |n|
+    lines << ''
+  end
+  lines << ANCHOR_IDENTIFIER
+else
+  if current_line.chomp == lines[tm_line_number-1].chomp
+    lines[tm_line_number-1] = "#{lines[tm_line_number-1]} #{ANCHOR_IDENTIFIER}"
+  else
+    need_index = lines.index(current_line.chomp)
+    lines[need_index] = "#{lines[need_index]} #{ANCHOR_IDENTIFIER}"
   end
 end
 

@@ -12,6 +12,7 @@ function scroll_window_please(){
 
     $("html, body").animate(css_params, 100, function(){
         document.body.innerHTML = document.body.innerHTML.replace(/REPLACEMEMEFORANCHOROPZ/g, '');
+        $(".github-gfm").css('visibility', 'visible');
     });
 }
 
