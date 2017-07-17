@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+cd "${TM_BUNDLE_SUPPORT}"
+
+if [[ -n "${TM_RUBY}" ]]; then
+    $TM_RUBY "${TM_BUNDLE_SUPPORT}/urlify.rb"
+else
+    echo "You need to set \$TM_RUBY variable."
+fi
+
+
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>~l</string>
+	<key>name</key>
+	<string>URLify</string>
+	<key>outputCaret</key>
+	<string>selectOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceSelection</string>
+	<key>scope</key>
+	<string>text.html.markdown</string>
+	<key>uuid</key>
+	<string>569F00B0-2286-402A-BEF7-AFD967710B5D</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
