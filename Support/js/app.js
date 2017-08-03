@@ -8,7 +8,6 @@ function scroll_window_please(){
     let css_params = {
         scrollTop: $("*:contains('REPLACEMEMEFORANCHOROPZ')").last().offset().top,
     };
-    // console.dir(css_params);
 
     $("html, body").animate(css_params, 100, function(){
         document.body.innerHTML = document.body.innerHTML.replace(/REPLACEMEMEFORANCHOROPZ/g, '');
@@ -29,7 +28,6 @@ $(document).ready(function() {
             }
             image.onload = function(){
                 loaded_images_count += 1;
-                // console.log('loaded_images_count', loaded_images_count);
                 if(required_images_count == loaded_images_count){
                     scroll_window_please();
                 }
