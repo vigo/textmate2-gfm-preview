@@ -3,8 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:Head} | ${2:Head}
-:---------|:---------
+	<string>| ${1:Head} | ${2:Head} |
+|:${1/./-/g}-|:${2/./-/g}-|
+| $1 | $2 |
 $0</string>
 	<key>name</key>
 	<string>Table</string>

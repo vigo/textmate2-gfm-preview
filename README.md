@@ -28,7 +28,7 @@ defaults write com.macromates.textmate environmentVariables -array-add '{enabled
 ```bash
 cd ~/Library/Application\ Support/TextMate/Bundles/
 git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
-cd GFM-Preview.tmbundle/
+cd GFM-Preview.tmbundle/Support/
 bundle install --path vendor/bundle
 
 # If you want to update time-to-time
@@ -198,6 +198,11 @@ Output:
 ***
 
 ## Change Log
+
+**2017-09-29**
+
+* Update: table + ⇥
+* Fix: README
 
 **2017-07-08**
 
