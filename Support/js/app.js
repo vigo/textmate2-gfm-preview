@@ -1,7 +1,6 @@
 let textMateHandleString = 'x-txmt-filehandle://job/Preview/';
 let fileHandleString = 'file:///Applications/TextMate.app/Contents/Resources/';
 
-let required_images_count = 0;
 let loaded_images_count = 0;
 
 function scroll_window_please(){
@@ -16,24 +15,20 @@ function scroll_window_please(){
 }
 
 $(document).ready(function() {
-    required_images_count = document.images.length;
-    
-    if(required_images_count > 0){
-        Array.prototype.forEach.call(document.images, function(image){
-            if(image.src.indexOf(textMateHandleString) > -1){
-                image.src = localFilePath + image.src.replace(textMateHandleString, '');
-            }
-            if(image.src.indexOf(fileHandleString) > -1){
-                image.src = localFilePath + image.src.replace(fileHandleString, '');
-            }
-            image.onload = function(){
-                loaded_images_count += 1;
-                if(required_images_count == loaded_images_count){
-                    scroll_window_please();
-                }
-            }
-        });
-    } else {
-        scroll_window_please();
-    }
+    $("img").one("load", function() {
+        loaded_images_count += 1;
+        if (loaded_images_count == $("img").length) {
+            scroll_window_please();
+        }
+    }).each(function() {
+        if(this.src.indexOf(textMateHandleString) > -1){
+            this.src = localFilePath + this.src.replace(textMateHandleString, '');
+        }
+        if(this.src.indexOf(fileHandleString) > -1){
+            this.src = localFilePath + this.src.replace(fileHandleString, '');
+        }
+        if(this.complete){
+            $(this).load();
+        }
+    });
 });

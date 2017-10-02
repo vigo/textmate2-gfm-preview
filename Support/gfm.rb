@@ -12,7 +12,6 @@ CSS_FILES = ['github-markdown', 'syntax-hightlight'].map do |f|
 end
 
 jl = ['jquery.1.12.4.min', 'app']
-jl << 'filehandler' if ENV['TM_FILEPATH']
 jl.map! do |f|
   "<script type=\"text/javascript\" src=\"file://#{ENV['TM_BUNDLE_SUPPORT']}/js/#{f}.js?#{TIME_STAMP}\"></script>"
 end

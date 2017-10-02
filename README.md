@@ -199,6 +199,11 @@ Output:
 
 ## Change Log
 
+**2017-10-02**
+
+* Update: <kbd>t</kbd> + ⇥ (*3 spaces for nested list*)
+* Fix: `app.js` remote image loading issue.
+
 **2017-09-29**
 
 * Update: table + ⇥
