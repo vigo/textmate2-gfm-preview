@@ -15,20 +15,25 @@ function scroll_window_please(){
 }
 
 $(document).ready(function() {
-    $("img").one("load", function() {
-        loaded_images_count += 1;
-        if (loaded_images_count == $("img").length) {
-            scroll_window_please();
-        }
-    }).each(function() {
-        if(this.src.indexOf(textMateHandleString) > -1){
-            this.src = localFilePath + this.src.replace(textMateHandleString, '');
-        }
-        if(this.src.indexOf(fileHandleString) > -1){
-            this.src = localFilePath + this.src.replace(fileHandleString, '');
-        }
-        if(this.complete){
-            $(this).load();
-        }
-    });
+    if($("img").length > 0){
+        $("img").one("load", function() {
+            loaded_images_count += 1;
+            if (loaded_images_count == $("img").length) {
+                scroll_window_please();
+            }
+        }).each(function() {
+            if(this.src.indexOf(textMateHandleString) > -1){
+                this.src = localFilePath + this.src.replace(textMateHandleString, '');
+            }
+            if(this.src.indexOf(fileHandleString) > -1){
+                this.src = localFilePath + this.src.replace(fileHandleString, '');
+            }
+            if(this.complete){
+                $(this).load();
+            }
+        });
+    } else {
+        scroll_window_please();
+    }
+    
 });
