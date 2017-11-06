@@ -41,6 +41,8 @@ You can define;
 - `TM_GFM_ZOOM_FACTOR`: For zooming text.
 - `TM_MARKDOWN_MATHJAX`: For Mathjax support.
 - `TM_GFM_FONT`: For custom font which is installed to your `~/Fonts`
+- `TM_GFM_LINK_FONT_WEIGHT`: Optional `font-weight:` css directive for `a` link tags.
+- `TM_GFM_LINK_TEXT_DECORATION`: Optional `text-decoration:` css directive for `a` link tags.
 
 variables from *TextMate > Preferences > Variables* for customizing extra
 features. Or do it from shell:
@@ -51,7 +53,9 @@ features. Or do it from shell:
 defaults write com.macromates.textmate environmentVariables -array-add \
     '{enabled = 1; value = "100%"; name = "TM_GFM_ZOOM_FACTOR"; }' \
     '{enabled = 1; value = 1; name = "TM_MARKDOWN_MATHJAX"; }' \
-    '{enabled = 1; value = "OpenSans"; name = "TM_GFM_FONT"; }'
+    '{enabled = 1; value = "OpenSans"; name = "TM_GFM_FONT"; }' \
+    '{enabled = 1; value = "500"; name = "TM_GFM_LINK_FONT_WEIGHT"; }' \
+    '{enabled = 1; value = "underline"; name = "TM_GFM_LINK_TEXT_DECORATION"; }'
 ```
 
 

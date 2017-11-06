@@ -66,10 +66,14 @@ extra_css_information = [
   "<style type=\"text/css\">",
   ".github-gfm {",
   "}",
+  ".github-gfm a {",
+  "}",
   "</style>",
 ]
 extra_css_information.insert(2, "zoom: #{ENV['TM_GFM_ZOOM_FACTOR']};") if ENV['TM_GFM_ZOOM_FACTOR']
 extra_css_information.insert(2, "font-family: #{ENV['TM_GFM_FONT']};") if ENV['TM_GFM_FONT']
+extra_css_information.insert(4, "font-weight: #{ENV['TM_GFM_LINK_FONT_WEIGHT']} !important;") if ENV['TM_GFM_LINK_FONT_WEIGHT']
+extra_css_information.insert(4, "text-decoration: #{ENV['TM_GFM_LINK_TEXT_DECORATION']} !important;") if ENV['TM_GFM_LINK_TEXT_DECORATION']
 
 preview_title = "Markdown Preview"
 preview_title= "#{preview_title}: #{File.basename(ENV['TM_FILEPATH'])}" if ENV['TM_FILEPATH']
