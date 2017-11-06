@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-2.1.0-orange.svg)
+![Version](https://img.shields.io/badge/version-2.2.0-orange.svg)
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
 
 
@@ -202,6 +202,12 @@ Output:
 ***
 
 ## Change Log
+
+**2017-11-06**
+
+* Version bump: `2.2.0`
+* `TM_GFM_LINK_FONT_WEIGHT` and `TM_GFM_LINK_TEXT_DECORATION` environment
+  variables are added.
 
 **2017-10-02**
 
