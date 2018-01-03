@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.5.0'
 
 gem 'redcarpet', '~> 3.4'
 gem 'rouge', '~> 2.1', '>= 2.1.1'
