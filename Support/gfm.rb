@@ -62,18 +62,24 @@ def markdown(text)
 end
 
 
-extra_css_information = [
-  "<style type=\"text/css\">",
-  ".github-gfm {",
-  "}",
-  ".github-gfm a {",
-  "}",
-  "</style>",
-]
-extra_css_information.insert(2, "zoom: #{ENV['TM_GFM_ZOOM_FACTOR']};") if ENV['TM_GFM_ZOOM_FACTOR']
-extra_css_information.insert(2, "font-family: #{ENV['TM_GFM_FONT']};") if ENV['TM_GFM_FONT']
-extra_css_information.insert(4, "font-weight: #{ENV['TM_GFM_LINK_FONT_WEIGHT']} !important;") if ENV['TM_GFM_LINK_FONT_WEIGHT']
-extra_css_information.insert(4, "text-decoration: #{ENV['TM_GFM_LINK_TEXT_DECORATION']} !important;") if ENV['TM_GFM_LINK_TEXT_DECORATION']
+extra_css_information = "<style type=\"text/css\">
+   .github-gfm {
+     %{gfm_zoom_factor}
+     %{gfm_font_factor}
+   }
+   .github-gfm a {
+     %{gfm_link_font_weight}
+     %{gfm_link_text_decoration}
+   }
+</style>"
+
+
+extra_css_information = extra_css_information % {
+  gfm_zoom_factor: ENV['TM_GFM_ZOOM_FACTOR'] ? "zoom: #{ENV['TM_GFM_ZOOM_FACTOR']};" : "",
+  gfm_font_factor: ENV['TM_GFM_FONT'] ? "font-family: #{ENV['TM_GFM_FONT']};" : "",
+  gfm_link_font_weight: ENV['TM_GFM_LINK_FONT_WEIGHT'] ? "font-weight: #{ENV['TM_GFM_LINK_FONT_WEIGHT']};" : "",
+  gfm_link_text_decoration: ENV['TM_GFM_LINK_TEXT_DECORATION'] ? "text-decoration: #{ENV['TM_GFM_LINK_TEXT_DECORATION']};": "",
+}
 
 preview_title = "Markdown Preview"
 preview_title= "#{preview_title}: #{File.basename(ENV['TM_FILEPATH'])}" if ENV['TM_FILEPATH']
@@ -124,7 +130,7 @@ end
 
 html_out = html_header(title: preview_title,
                        css: CSS_FILES.join("\n"),
-                       extra_css: extra_css_information.join("\n"),
+                       extra_css: extra_css_information,
                        inline_js: any_inline_js)
 
 lines = clear_front_matter(input: input_file)
