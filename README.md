@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-2.2.0-orange.svg)
+![Version](https://img.shields.io/badge/version-2.2.1-orange.svg)
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
 
 
@@ -12,16 +12,23 @@ dead...*)
 - Ruby 2.4.0
 - Please set your `TM_RUBY` environment variable in TextMate.
 
-Example of `TM_RUBY` configuration:
+You need to install `bundler` gem first. If you are using built-in Ruby which
+is shipped with macOS, you need to install `bundler` gem via `sudo`:
 
 ```bash
-which ruby
-# /Users/vigo/.rbenv/shims/ruby
-
-defaults write com.macromates.textmate environmentVariables -array-add '{enabled = 1; value = "/Users/vigo/.rbenv/shims/ruby"; name = "TM_RUBY"; }'
-# Restart your TextMate
+$ sudo gem install bundler # for built-in ruby
+$ gem install bundler      # for only homebrew or rbenv etc..
 ```
 
+According to your ruby version, please set `TM_RUBY` variable:
+
+```bash
+$ which ruby
+# /Users/vigo/.rbenv/shims/ruby
+
+$ defaults write com.macromates.textmate environmentVariables -array-add '{enabled = 1; value = "/Users/vigo/.rbenv/shims/ruby"; name = "TM_RUBY"; }'
+# Restart your TextMate
+```
 
 ## Install & Update
 
@@ -202,6 +209,12 @@ Output:
 ***
 
 ## Change Log
+
+**2018-10-18**
+
+* Version bump: `2.2.1`
+* Installation information update
+
 
 **2017-11-06**
 
