@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-2.2.1-orange.svg)
+![Version](https://img.shields.io/badge/version-2.2.2-orange.svg)
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
 
 
@@ -209,6 +209,11 @@ Output:
 ***
 
 ## Change Log
+
+**2018-11-02**
+
+* Fix latest Safari update `Version 12.0.1 (13606.2.104.1.2)`
+* Version bump: `2.2.2`
 
 **2018-10-18**
 
