@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
-
 Bundler.require
+
 require 'rouge/plugins/redcarpet'
 
 DELIMITER = /^---\s*$/
@@ -168,7 +168,8 @@ markdown_lines = markdown(lines.join("\n"))
 html_out = html_out + markdown_lines
 html_out = html_out + html_footer(js: JS_FILES.join("\n"))
 
-# debug mode...
-# puts render html_out, true
-
-puts render html_out
+if ENV['TM_GFM_DEBUG']
+  puts render html_out, true
+else
+  puts render html_out
+end

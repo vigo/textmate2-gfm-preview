@@ -1,47 +1,58 @@
-![Version](https://img.shields.io/badge/version-2.2.2-orange.svg)
+![Version](https://img.shields.io/badge/version-3.0.0-orange.svg)
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
-
+![macOS](https://img.shields.io/badge/macos-HighSierra-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Mojave-yellow.svg)
 
 # GitHub Flavored Markdown Editor and Preview for TextMate2
 
-Write and preview your Markdown files like a Boss! (*Sorry, TextMate1 is
-dead...*)
+Write and preview your Markdown files like a Boss!
 
 ## Requirements
 
-- Ruby 2.4.0
-- Please set your `TM_RUBY` environment variable in TextMate.
+- Ruby executable.
+- `bundler` gem
 
-You need to install `bundler` gem first. If you are using built-in Ruby which
-is shipped with macOS, you need to install `bundler` gem via `sudo`:
-
-```bash
-$ sudo gem install bundler # for built-in ruby
-$ gem install bundler      # for only homebrew or rbenv etc..
-```
-
-According to your ruby version, please set `TM_RUBY` variable:
+Please set your `TM_RUBY` environment variable if you like to use different
+ruby executable (*such as rbenv/rvm*). Check your ruby via:
 
 ```bash
-$ which ruby
-# /Users/vigo/.rbenv/shims/ruby
+$ command -v ruby
+/Users/vigo/.rbenv/shims/ruby      # example output
+$ command -v bundler
+/Users/vigo/.rbenv/shims/bundler
 
-$ defaults write com.macromates.textmate environmentVariables -array-add '{enabled = 1; value = "/Users/vigo/.rbenv/shims/ruby"; name = "TM_RUBY"; }'
-# Restart your TextMate
+# you can instal bundler via
+$ (sudo) gem install bundler       # `sudo` is optional according to your ruby-version
 ```
 
-## Install & Update
+## Install and Update
+
+Make sure that TextMate is not running. If you like to add custom ruby binary
+to your TextMate environment;
 
 ```bash
-cd ~/Library/Application\ Support/TextMate/Bundles/
-git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
-cd GFM-Preview.tmbundle/Support/
-bundle install --path vendor/bundle
-
-# If you want to update time-to-time
-cd ~/Library/Application\ Support/TextMate/Bundles/GFM-Preview.tmbundle
-git pull
+$ defaults write com.macromates.TextMate environmentVariables -array-add "{enabled = 1; value = \"$(command -v ruby)\"; name = \"TM_RUBY\"; }"
 ```
+
+Now clone the repo:
+
+```bash
+$ cd ~/Library/Application\ Support/TextMate/Bundles/
+$ git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
+$ cd GFM-Preview.tmbundle/Support/
+$ bundle install --path vendor/bundle
+```
+
+I update and add new features to this bundle. You can **watch** this repo
+or do `git pull` time-to-time.
+
+```bash
+$ cd ~/Library/Application\ Support/TextMate/Bundles/GFM-Preview.tmbundle
+$ git pull --rebase
+```
+
+
+## TextMate Environment Variables
 
 You can define;
 
@@ -57,7 +68,7 @@ features. Or do it from shell:
 ```bash
 # assuming that, `OpenSans` font already installed on your ~/Library/Fonts
 
-defaults write com.macromates.textmate environmentVariables -array-add \
+defaults write com.macromates.TextMate environmentVariables -array-add \
     '{enabled = 1; value = "100%"; name = "TM_GFM_ZOOM_FACTOR"; }' \
     '{enabled = 1; value = 1; name = "TM_MARKDOWN_MATHJAX"; }' \
     '{enabled = 1; value = "OpenSans"; name = "TM_GFM_FONT"; }' \
@@ -209,6 +220,10 @@ Output:
 ***
 
 ## Change Log
+
+**2018-11-21**
+
+* Update: Installation information, removed ruby version dependency
 
 **2018-11-02**
 

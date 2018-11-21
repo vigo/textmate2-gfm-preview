@@ -2,8 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     redcarpet (3.4.0)
-    rouge (2.1.1)
-    stringex (2.7.1)
+    rouge (2.2.1)
+    stringex (2.8.5)
 
 PLATFORMS
   ruby
@@ -13,8 +13,5 @@ DEPENDENCIES
   rouge (~> 2.1, >= 2.1.1)
   stringex (~> 2.7, >= 2.7.1)
 
-RUBY VERSION
-   ruby 2.5.0p0
-
 BUNDLED WITH
-   1.16.1
+   1.17.1

@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>autoRefresh</key>
+	<array>
+		<string>DocumentChanged</string>
+	</array>
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
@@ -10,10 +14,16 @@
 
 cd "${TM_BUNDLE_SUPPORT}"
 
+RUBY=$(command -v ruby)
 if [[ -n "${TM_RUBY}" ]]; then
-    $TM_RUBY "${TM_BUNDLE_SUPPORT}/gfm.rb"
+    RUBY="${TM_RUBY}"
+fi
+
+if [[ -n "${RUBY}" ]]; then
+    $RUBY "${TM_BUNDLE_SUPPORT}/gfm.rb"
 else
-    echo "You need to set \$TM_RUBY variable."
+    echo "You need RUBY binary..."
+    echo "Set \$TM_RUBY or install ruby to your system"
 fi
 
 
@@ -38,9 +48,5 @@ fi
 	<string>75B3AC6F-8A8E-46EB-87A1-C72E523F0075</string>
 	<key>version</key>
 	<integer>2</integer>
-	<key>autoRefresh</key>
-    <array>
-        <string>DocumentChanged</string>
-    </array>
 </dict>
 </plist>
