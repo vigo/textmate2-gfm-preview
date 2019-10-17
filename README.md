@@ -2,6 +2,7 @@
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
 ![macOS](https://img.shields.io/badge/macos-HighSierra-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Mojave-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Catalina-yellow.svg)
 
 # GitHub Flavored Markdown Editor and Preview for TextMate2
 
@@ -220,6 +221,10 @@ Output:
 ***
 
 ## Change Log
+
+**2019-10-17**
+
+* Add bumpversion support
 
 **2018-11-21**
 
