@@ -3,6 +3,7 @@
 ![macOS](https://img.shields.io/badge/macos-HighSierra-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Mojave-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Catalina-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-BigSur-yellow.svg)
 
 # GitHub Flavored Markdown Editor and Preview for TextMate2
 
