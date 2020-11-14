@@ -41,15 +41,15 @@ Now clone the repo:
 $ cd ~/Library/Application\ Support/TextMate/Bundles/
 $ git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
 $ cd GFM-Preview.tmbundle/Support/
-$ bundle install --path vendor/bundle
+$ bundle config set path "vendor/bundle"
+$ bundle install
 ```
 
-I update and add new features to this bundle. You can **watch** this repo
-or do `git pull` time-to-time.
+You can follow update via `git pull` time-to-time.
 
 ```bash
 $ cd ~/Library/Application\ Support/TextMate/Bundles/GFM-Preview.tmbundle
-$ git pull --rebase
+$ git pull origin master
 ```
 
 
