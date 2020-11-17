@@ -20,6 +20,7 @@ ruby executable (*such as rbenv/rvm*). Check your ruby via:
 ```bash
 $ command -v ruby
 /Users/vigo/.rbenv/shims/ruby      # example output
+
 $ command -v bundler
 /Users/vigo/.rbenv/shims/bundler
 
@@ -27,13 +28,17 @@ $ command -v bundler
 $ (sudo) gem install bundler       # `sudo` is optional according to your ruby-version
 ```
 
+Current setup requires `bundler` version `1.17.1` which is shipped with
+macOS Catalina.
+
 ## Install and Update
 
 Make sure that TextMate is not running. If you like to add custom ruby binary
 to your TextMate environment;
 
 ```bash
-$ defaults write com.macromates.TextMate environmentVariables -array-add "{enabled = 1; value = \"$(command -v ruby)\"; name = \"TM_RUBY\"; }"
+$ defaults write com.macromates.TextMate environmentVariables \
+    -array-add "{enabled = 1; value = \"$(command -v ruby)\"; name = \"TM_RUBY\"; }"
 ```
 
 Now clone the repo:
@@ -42,8 +47,7 @@ Now clone the repo:
 $ cd ~/Library/Application\ Support/TextMate/Bundles/
 $ git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
 $ cd GFM-Preview.tmbundle/Support/
-$ bundle config set path "vendor/bundle"
-$ bundle install
+$ bundle install --path vendor/bundle
 ```
 
 You can follow update via `git pull` time-to-time.
