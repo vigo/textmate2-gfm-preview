@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    redcarpet (3.4.0)
+    redcarpet (3.5.1)
     rouge (2.2.1)
     stringex (2.8.5)
 
@@ -14,4 +14,4 @@ DEPENDENCIES
   stringex (~> 2.7, >= 2.7.1)
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
