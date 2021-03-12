@@ -9,7 +9,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  redcarpet (~> 3.4)
+  redcarpet (>= 3.5.1)
   rouge (~> 2.1, >= 2.1.1)
   stringex (~> 2.7, >= 2.7.1)
 
