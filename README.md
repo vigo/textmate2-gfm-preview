@@ -28,7 +28,7 @@ $ command -v bundler
 $ (sudo) gem install bundler       # `sudo` is optional according to your ruby-version
 ```
 
-Current setup requires `bundler` version `1.17.1` which is shipped with
+Current setup requires `bundler` version `2.1.4` which is shipped with
 macOS Catalina.
 
 ## Install and Update
@@ -41,12 +41,15 @@ $ defaults write com.macromates.TextMate environmentVariables \
     -array-add "{enabled = 1; value = \"$(command -v ruby)\"; name = \"TM_RUBY\"; }"
 ```
 
+or you can add custom ruby as `.tm_properties` which is shown bellow
+
 Now clone the repo:
 
 ```bash
 $ cd ~/Library/Application\ Support/TextMate/Bundles/
 $ git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
 $ cd GFM-Preview.tmbundle/Support/
+$ echo 'TM_RUBY="/path/to/ruby"' > .tm_properties
 $ bundle install --path vendor/bundle
 ```
 
