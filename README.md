@@ -11,7 +11,7 @@ Write and preview your Markdown files like a Boss!
 
 ## Requirements
 
-- Ruby executable.
+- Ruby executable. (*recommended version 2.7.0*)
 - `bundler` gem
 
 Please set your `TM_RUBY` environment variable if you like to use different
@@ -41,15 +41,12 @@ $ defaults write com.macromates.TextMate environmentVariables \
     -array-add "{enabled = 1; value = \"$(command -v ruby)\"; name = \"TM_RUBY\"; }"
 ```
 
-or you can add custom ruby as `.tm_properties` which is shown bellow
-
 Now clone the repo:
 
 ```bash
 $ cd ~/Library/Application\ Support/TextMate/Bundles/
 $ git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
 $ cd GFM-Preview.tmbundle/Support/
-$ echo 'TM_RUBY="/path/to/ruby"' > .tm_properties
 $ bundle install --path vendor/bundle
 ```
 
