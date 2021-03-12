@@ -6,7 +6,7 @@ GEM
     stringex (2.8.5)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-19
 
 DEPENDENCIES
   redcarpet (>= 3.5.1)
@@ -14,4 +14,4 @@ DEPENDENCIES
   stringex (~> 2.7, >= 2.7.1)
 
 BUNDLED WITH
-   1.17.2
+   2.2.2
