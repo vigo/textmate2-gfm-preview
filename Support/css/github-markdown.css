@@ -11,6 +11,8 @@ body {
   line-height: 1.6;
   word-wrap: break-word;
   visibility: hidden;
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 
 .github-gfm strong {
