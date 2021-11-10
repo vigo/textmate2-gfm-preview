@@ -4,6 +4,7 @@
 ![macOS](https://img.shields.io/badge/macos-Mojave-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Catalina-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-BigSur-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Monterey-yellow.svg)
 
 # GitHub Flavored Markdown Editor and Preview for TextMate2
 
@@ -11,30 +12,20 @@ Write and preview your Markdown files like a Boss!
 
 ## Requirements
 
-- Ruby executable. (*recommended version 2.7.0*)
-- `bundler` gem
-
-Please set your `TM_RUBY` environment variable if you like to use different
-ruby executable (*such as rbenv/rvm*). Check your ruby via:
+Ruby is shipped with macOS. Current builtin ruby version (*macOS Monterey*) is
+**2.6.8**. First, install bundler to your user folder;
 
 ```bash
-$ command -v ruby
-/Users/vigo/.rbenv/shims/ruby      # example output
-
-$ command -v bundler
-/Users/vigo/.rbenv/shims/bundler
-
-# you can instal bundler via
-$ (sudo) gem install bundler       # `sudo` is optional according to your ruby-version
+$ gem install --user-install bundler
+$ export PATH="/Users/${USER}/.gem/ruby/2.6.0/bin:${PATH}" # add local ruby/bin path to your shell environment
 ```
 
-Current setup requires `bundler` version `2.1.4` which is shipped with
-macOS Catalina.
+If you have already installed `rbenv` or `rvm`, you’re good to go.
 
 ## Install and Update
 
-Make sure that TextMate is not running. If you like to add custom ruby binary
-to your TextMate environment;
+Make sure that TextMate is not running. Add `TM_RUBY` environment variable to
+TextMate:
 
 ```bash
 $ defaults write com.macromates.TextMate environmentVariables \
@@ -47,14 +38,16 @@ Now clone the repo:
 $ cd ~/Library/Application\ Support/TextMate/Bundles/
 $ git clone https://github.com/vigo/textmate2-gfm-preview.git GFM-Preview.tmbundle
 $ cd GFM-Preview.tmbundle/Support/
-$ bundle install --path vendor/bundle
+$ bundle config set --local path 'vendor/bundle'
+$ bundle
 ```
 
-You can follow update via `git pull` time-to-time.
+That’s it! Bundle installed successfully! You can follow updates via `git
+pull` time-to-time.
 
 ```bash
 $ cd ~/Library/Application\ Support/TextMate/Bundles/GFM-Preview.tmbundle
-$ git pull origin master
+$ git pull origin main
 ```
 
 
