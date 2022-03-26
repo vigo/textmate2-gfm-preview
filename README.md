@@ -17,7 +17,13 @@ Ruby is shipped with macOS. Current builtin ruby version (*macOS Monterey*) is
 
 ```bash
 $ gem install --user-install bundler
-$ export PATH="/Users/${USER}/.gem/ruby/2.6.0/bin:${PATH}" # add local ruby/bin path to your shell environment
+
+# find users path
+$ ruby -r rubygems -e 'puts Gem.user_dir' # returns /Users/${USER}/.gem/ruby/2.6.0
+$ export PATH="/Users/${USER}/.gem/ruby/2.6.0/bin:${PATH}" # add local user gem bin path to your shell environment
+
+# or find it automatically
+$ export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:${PATH}"
 ```
 
 If you have already installed `rbenv` or `rvm`, you’re good to go.
