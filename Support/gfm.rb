@@ -32,11 +32,27 @@ MathJax.Hub.Config({
   jl << "<script type=\"text/javascript\" async src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>"
 end
 
+if ENV['TM_MARKDOWN_MERMAID'].to_i > 0
+  jl << "<script src=\"https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js\"></script>"
+  jl << "<script>mermaid.initialize({startOnLoad:true});</script>"
+end
+
 
 JS_FILES = jl
 
 class HTMLwithRouge < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
+
+  def block_code(code, language)
+    if language == 'mermaid'
+      if ENV['TM_MARKDOWN_MERMAID'].to_i > 0
+        return "<div class='mermaid'>#{code}</div>"
+      else
+        return "<code>you need to set TM_MARKDOWN_MERMAID to 1</code>"
+      end
+    end
+    super
+  end
 end
 
 def markdown(text)
