@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-3.1.4-orange.svg)
+![Version](https://img.shields.io/badge/version-3.2.0-orange.svg)
 ![Plaftorm](https://img.shields.io/badge/platform-TextMate-blue.svg)
 ![macOS](https://img.shields.io/badge/macos-HighSierra-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Mojave-yellow.svg)
