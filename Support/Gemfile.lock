@@ -7,6 +7,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  arm64-darwin-22
   universal-darwin-21
   x86_64-darwin-19
 
@@ -16,4 +17,4 @@ DEPENDENCIES
   stringex (~> 2.7, >= 2.7.1)
 
 BUNDLED WITH
-   2.2.31
+   2.3.26
