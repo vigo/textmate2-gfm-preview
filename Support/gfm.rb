@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'json'
 Bundler.require
 
 require 'rouge/plugins/redcarpet'
@@ -33,8 +34,17 @@ MathJax.Hub.Config({
 end
 
 if ENV['TM_MARKDOWN_MERMAID'].to_i > 0
+  mermaid_options = {}
+  mermaid_options["startOnLoad"] = true
+
+  if ENV['TM_MARKDOWN_MERMAID_SHOW_SEQUENCE_NUMBERS']
+    opt_show_seq_numbers = false
+    opt_show_seq_numbers = true if ['true','TRUE'].include?(ENV['TM_MARKDOWN_MERMAID_SHOW_SEQUENCE_NUMBERS'])
+    mermaid_options["sequence"] = {"showSequenceNumbers": opt_show_seq_numbers}
+  end
+  
   jl << "<script src=\"https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js\"></script>"
-  jl << "<script>mermaid.initialize({startOnLoad:true});</script>"
+  jl << "<script>var mm_opts = #{mermaid_options.to_json};mermaid.initialize(mm_opts);</script>"
 end
 
 

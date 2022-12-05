@@ -146,6 +146,12 @@ or
         Alice-)John: See you later!
     ```
 
+Mermaid related configuration via env-vars:
+
+- `TM_MARKDOWN_MERMAID_SHOW_SEQUENCE_NUMBERS`: `true` or `false` will
+  (dis)allow sequence numbers on screen. (sequenceDiagram). Default value is
+  `false`
+
 ### Mathjax Support
 
 Add `TM_MARKDOWN_MATHJAX` variable and set it to `1` for mathjax support.
