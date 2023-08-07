@@ -5,6 +5,8 @@
 ![macOS](https://img.shields.io/badge/macos-Catalina-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-BigSur-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Monterey-yellow.svg)
+![Powered by Rake](https://img.shields.io/badge/powered_by-rake-blue?logo=ruby)
+
 
 # GitHub Flavored Markdown Editor and Preview for TextMate2
 
