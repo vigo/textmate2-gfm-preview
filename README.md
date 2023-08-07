@@ -5,6 +5,7 @@
 ![macOS](https://img.shields.io/badge/macos-Catalina-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-BigSur-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Monterey-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Ventura-yellow.svg)
 ![Powered by Rake](https://img.shields.io/badge/powered_by-rake-blue?logo=ruby)
 
 
