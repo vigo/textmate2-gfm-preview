@@ -185,6 +185,7 @@ else
     lines[tm_line_number-1] = "#{lines[tm_line_number-1]} #{ANCHOR_IDENTIFIER}"
   else
     need_index = lines.index(current_line.chomp)
+    need_index = 0 if need_index.nil?
     lines[need_index] = "#{lines[need_index]} #{ANCHOR_IDENTIFIER}"
   end
 end
