@@ -6,20 +6,22 @@
 ![macOS](https://img.shields.io/badge/macos-BigSur-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Monterey-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Ventura-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Sonoma-yellow.svg)
 ![Powered by Rake](https://img.shields.io/badge/powered_by-rake-blue?logo=ruby)
 
 
 # GitHub Flavored Markdown Editor and Preview for TextMate2
 
-Write and preview your Markdown files like a Boss!
+Write and preview your Markdown files like a Boss! This bundle battle tested
+under **M1**, **M2** and **M3** Mac Books :)
 
 ## Requirements
 
-Ruby is shipped with macOS. Current builtin ruby version (*macOS Monterey*) is
-**2.6.8**. First, install bundler to your user folder;
+Ruby is shipped with macOS. Current builtin ruby version (*macOS Sonoma*) is
+**2.6.10**. First, install bundler to your user folder;
 
 ```bash
-$ gem install --user-install bundler
+$ gem install --user-install bundler:2.3.26  # macOS Sonoma ships with ruby 2.6.10p210
 
 # find users path
 $ ruby -r rubygems -e 'puts Gem.user_dir' # returns /Users/${USER}/.gem/ruby/2.6.0
