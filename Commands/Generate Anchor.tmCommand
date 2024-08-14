@@ -12,7 +12,7 @@ cd "${TM_BUNDLE_SUPPORT}"
 
 ruby_bin=$(command -v ruby || "${TM_RUBY}")
 if [[ -n "${ruby_bin}" ]]; then
-    ${ruby_bin} "${TM_BUNDLE_SUPPORT}/urlify.rb"
+    ${ruby_bin} "${TM_BUNDLE_SUPPORT}/anchor.rb"
 else
     echo "You need a ruby executable to run, install ruby or set \$TM_RUBY variable."
 fi
@@ -24,7 +24,7 @@ fi
 	<key>keyEquivalent</key>
 	<string>~l</string>
 	<key>name</key>
-	<string>URLify</string>
+	<string>Generate Anchor</string>
 	<key>outputCaret</key>
 	<string>selectOutput</string>
 	<key>outputFormat</key>
@@ -34,7 +34,7 @@ fi
 	<key>scope</key>
 	<string>text.html.markdown</string>
 	<key>uuid</key>
-	<string>569F00B0-2286-402A-BEF7-AFD967710B5D</string>
+	<string>5B1CB8EC-03B1-4E77-84E2-F45ECAC5AD6D</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>
