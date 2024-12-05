@@ -7,28 +7,26 @@
 ![macOS](https://img.shields.io/badge/macos-Monterey-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Ventura-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Sonoma-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Sonoma-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Sequoia-yellow.svg)
 ![Powered by Rake](https://img.shields.io/badge/powered_by-rake-blue?logo=ruby)
 
 
 # GitHub Flavored Markdown Editor and Preview for TextMate2
 
 Write and preview your Markdown files like a Boss! This bundle battle tested
-under **M1**, **M2** and **M3** Mac Books :)
+under **M1**, **M2**, **M3** and **M4** Mac Books :) Yes, TextMate still
+works on **Sequoia**!
 
 ## Requirements
 
 Ruby is shipped with macOS. Current builtin ruby version (*macOS Sonoma*) is
-**2.6.10**. First, install bundler to your user folder;
+**2.6.10**, and **2.6.10p210** (*macOS Sequoia*). It’s better to use `rbenv`
+and set your `TM_RUBY` environment variable from TextMate!
 
 ```bash
-$ gem install --user-install bundler:2.3.26  # macOS Sonoma ships with ruby 2.6.10p210
-
-# find users path
-$ ruby -r rubygems -e 'puts Gem.user_dir' # returns /Users/${USER}/.gem/ruby/2.6.0
-$ export PATH="/Users/${USER}/.gem/ruby/2.6.0/bin:${PATH}" # add local user gem bin path to your shell environment
-
-# or find it automatically
-$ export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:${PATH}"
+rbenv which ruby
+# /Users/vigo/.rbenv/versions/3.3.6/bin/ruby
 ```
 
 If you have already installed `rbenv` or `rvm`, you’re good to go.
@@ -40,7 +38,7 @@ TextMate:
 
 ```bash
 $ defaults write com.macromates.TextMate environmentVariables \
-    -array-add "{enabled = 1; value = \"$(command -v ruby)\"; name = \"TM_RUBY\"; }"
+    -array-add "{enabled = 1; value = \"$(rbenv which ruby)\"; name = \"TM_RUBY\"; }"
 ```
 
 Now clone the repo:
