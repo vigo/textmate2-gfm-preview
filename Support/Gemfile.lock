@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ostruct (0.6.1)
     redcarpet (3.6.0)
     rouge (2.2.1)
     stringex (2.8.5)
@@ -14,6 +15,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  ostruct (>= 0.5.5)
   redcarpet (>= 3.5.1)
   rouge (~> 2.1, >= 2.1.1)
   stringex (~> 2.7, >= 2.7.1)
