@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>Code Inline</string>
 	<key>scope</key>
-	<string>text.html.markdown</string>
+	<string>text.html.markdown,source.yaml</string>
 	<key>uuid</key>
 	<string>3DA3EB72-8DFC-45B1-8180-7CED5FFD8877</string>
 </dict>
