@@ -100,7 +100,11 @@ extra_css_rules = []
 extra_css_rules << ".github-gfm {\n     #{gfm_props.join("\n     ")}\n   }" unless gfm_props.empty?
 extra_css_rules << ".github-gfm a {\n     #{link_props.join("\n     ")}\n   }" unless link_props.empty?
 
-macos_major = `sw_vers -productVersion`.strip.split('.').first.to_i
+macos_major = begin
+  `sw_vers -productVersion`.strip.split('.').first.to_i
+rescue Errno::ENOENT
+  0
+end
 if macos_major >= 26
   extra_css_rules << "@media print {\n     body {\n       padding-left: 32em !important;\n       padding-right: 32em !important;\n     }\n   }"
 end
