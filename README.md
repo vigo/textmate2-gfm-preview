@@ -7,8 +7,8 @@
 ![macOS](https://img.shields.io/badge/macos-Monterey-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Ventura-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Sonoma-yellow.svg)
-![macOS](https://img.shields.io/badge/macos-Sonoma-yellow.svg)
 ![macOS](https://img.shields.io/badge/macos-Sequoia-yellow.svg)
+![macOS](https://img.shields.io/badge/macos-Tahoe-yellow.svg)
 ![Powered by Rake](https://img.shields.io/badge/powered_by-rake-blue?logo=ruby)
 
 
@@ -267,6 +267,11 @@ Output:
 ***
 
 ## Change Log
+
+**2026-02-14**
+
+* Fix preview rendering issue on macOS Tahoe (26+)
+* Refactor extra CSS injection: empty `<style>` block is no longer rendered when no custom environment variables are set
 
 **2022-10-04**
 
