@@ -88,24 +88,28 @@ def markdown(text)
 end
 
 
-extra_css_information = "<style type=\"text/css\">
-   .github-gfm {
-     %{gfm_zoom_factor}
-     %{gfm_font_factor}
-   }
-   .github-gfm a {
-     %{gfm_link_font_weight}
-     %{gfm_link_text_decoration}
-   }
-</style>"
+gfm_props = []
+gfm_props << "zoom: #{ENV['TM_GFM_ZOOM_FACTOR']};" if ENV['TM_GFM_ZOOM_FACTOR']
+gfm_props << "font-family: #{ENV['TM_GFM_FONT']};" if ENV['TM_GFM_FONT']
 
+link_props = []
+link_props << "font-weight: #{ENV['TM_GFM_LINK_FONT_WEIGHT']};" if ENV['TM_GFM_LINK_FONT_WEIGHT']
+link_props << "text-decoration: #{ENV['TM_GFM_LINK_TEXT_DECORATION']};" if ENV['TM_GFM_LINK_TEXT_DECORATION']
 
-extra_css_information = extra_css_information % {
-  gfm_zoom_factor: ENV['TM_GFM_ZOOM_FACTOR'] ? "zoom: #{ENV['TM_GFM_ZOOM_FACTOR']};" : "",
-  gfm_font_factor: ENV['TM_GFM_FONT'] ? "font-family: #{ENV['TM_GFM_FONT']};" : "",
-  gfm_link_font_weight: ENV['TM_GFM_LINK_FONT_WEIGHT'] ? "font-weight: #{ENV['TM_GFM_LINK_FONT_WEIGHT']};" : "",
-  gfm_link_text_decoration: ENV['TM_GFM_LINK_TEXT_DECORATION'] ? "text-decoration: #{ENV['TM_GFM_LINK_TEXT_DECORATION']};": "",
-}
+extra_css_rules = []
+extra_css_rules << ".github-gfm {\n     #{gfm_props.join("\n     ")}\n   }" unless gfm_props.empty?
+extra_css_rules << ".github-gfm a {\n     #{link_props.join("\n     ")}\n   }" unless link_props.empty?
+
+macos_major = `sw_vers -productVersion`.strip.split('.').first.to_i
+if macos_major >= 26
+  extra_css_rules << "@media print {\n     body {\n       padding-left: 32em !important;\n       padding-right: 32em !important;\n     }\n   }"
+end
+
+extra_css_information = if extra_css_rules.empty?
+  ""
+else
+  "<style type=\"text/css\">\n   #{extra_css_rules.join("\n   ")}\n</style>"
+end
 
 preview_title = "Markdown Preview"
 preview_title= "#{preview_title}: #{File.basename(ENV['TM_FILEPATH'])}" if ENV['TM_FILEPATH']
